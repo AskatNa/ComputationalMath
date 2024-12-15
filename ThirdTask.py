@@ -1,4 +1,3 @@
-import math
 x0 = 1
 x1 = 2
 tol = 0.01
@@ -18,6 +17,7 @@ def secantMethod(x0,x1,tol,nmax): #step 1
         fx1 = f(x1)
         sign(fx0,fx1) # step 3
         x2 = x1 - fx1 * ((x1 - x0) / (fx1 - fx0)) # step 4
+        print(f"Iteration {i}: x = {x2}")
         if abs(x2 - x1) > tol: #step 5
             x0 = x1
             x1 = x2
@@ -27,3 +27,4 @@ def secantMethod(x0,x1,tol,nmax): #step 1
             return x2
 root = secantMethod(x0,x1,tol,nmax)
 print("x2 root: ", root) # step 6
+
